@@ -55,7 +55,7 @@ jobs:
     permissions:
       contents: write
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # ← 未来対応
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   
 
     steps:
       - name: Checkout Main
@@ -81,7 +81,7 @@ jobs:
       
       - name: SDK Caching
         id: SDK
-        uses: actions/cache@v4   # ← 修正済み
+        uses: actions/cache@v4   
         env:
           cache-name: iOS-${{ inputs.sdk_version }}-SDK
         with:
@@ -157,7 +157,7 @@ jobs:
 
       - name: Create Release
         if: ${{ inputs.create_release }}
-        uses: softprops/action-gh-release@v2   # ← 修正済み
+        uses: softprops/action-gh-release@v2   
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
