@@ -160,7 +160,7 @@ jobs:
 
       - name: Create Release
         if: ${{ inputs.create_release }}
-        uses: softprops/action-gh-release@v4  # ← 修正済み
+        uses: softprops/action-gh-release@v3  # ← 修正済み
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
